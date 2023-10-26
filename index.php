@@ -9,16 +9,19 @@
 </head>
 <body>
 <?php
-    $n = 5; //int
+    const MY_AGE = 24;
+    echo MY_AGE . '<br>';
+
+    $n = 500; //int
 //    $n = 45;
-    $num = -0.55; //float
+    $num = -0.788; //float
 
     $str = 'Переменная'; //string
     $bool = false; // boolean
 
-    $a = 0.9;
-    $b = '0.4';
-    echo $a + $b . '<br>';
+    $a = 0.2100;
+    $b = '0.7';
+    echo $a + floatval($b) . '<br>';
 
     echo $str . ': ' . $n . '<br>' . 'Var 2: ' . $num . '.';
 ?>
