@@ -9,13 +9,18 @@
 </head>
 <body>
 <?php
-	echo 'Сегодня хорошая <br>погода';
-	// Ладыка Александр
-	# Comment
-	/*
-		Comment
-		Comment
-	*/
+    $n = 5; //int
+//    $n = 45;
+    $num = -0.55; //float
+
+    $str = 'Переменная'; //string
+    $bool = false; // boolean
+
+    $a = 0.9;
+    $b = '0.4';
+    echo $a + $b . '<br>';
+
+    echo $str . ': ' . $n . '<br>' . 'Var 2: ' . $num . '.';
 ?>
 </body>
 </html>
