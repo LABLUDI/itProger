@@ -9,21 +9,38 @@
 </head>
 <body>
 <?php
-    const MY_AGE = 24;
-    echo MY_AGE . '<br>';
+    $x = 10;
+    $y = 20;
 
-    $n = 500; //int
-//    $n = 45;
-    $num = -0.788; //float
+    echo $x + $y . '<br>';
+    echo $x - $y . '<br>';
+    echo $x * $y . '<br>';
+    echo $x / $y . '<br>';
+    echo $x % $y . '<br>';
 
-    $str = 'Переменная'; //string
-    $bool = false; // boolean
+    $x += 10; // $X = $x + 10;
+    $y -= 10; // $y = $y - 10;
+    echo $x . '<br>';
+    echo $y . '<br>';
 
-    $a = 0.2100;
-    $b = '0.7';
-    echo $a + floatval($b) . '<br>';
+    $x++;// $x += 1; Инкремент
+    $x--; // $x -= 1; Декремент
 
-    echo $str . ': ' . $n . '<br>' . 'Var 2: ' . $num . '.';
+    echo M_PI . '<br>';
+    echo M_E . '<br>';
+
+    echo abs(-22) . '<br>';
+    echo ceil(3.1) . '<br>';
+    echo floor(3.9) . '<br>';
+    echo round(3.15435353, 2) . '<br>';
+
+    $rand = mt_rand(1, 974982108708999999);
+    $rand++;
+
+    echo $rand . '<br>';
+    echo min(2,0, 5, 4, 3, 6, 24, 41, 4, 3) . '<br>';
+    echo max(2,0, 5, 4, 3, 6, 24, 41, 4, 3) . '<br>';
+
 ?>
 </body>
 </html>
