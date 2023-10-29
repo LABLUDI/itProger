@@ -9,26 +9,59 @@
 </head>
 <body>
 <?php
-// Одномерные массивы
-    $nums = array(4, 5, 6, -23, 6);
-    $nums[0] = 45;
-    echo $nums[0] . '<br>';
+// Цикл For
+    for($i = 100; $i > 20; $i -= 5)
+        echo $i . '<br>';
 
-    $arr = [4, 5, 0.4, 'ghbdtn', true, 21];
-    echo $arr[4] . '<br>';
+// Цикл While
+    $i = 1;
+    while($i <= 10) {
+        echo $i . '<br>';
+        $i++;
+    }
 
-// Ассоциативные массивы
-    $list = ['age' => 24, 'name' => 'Alex', 'hobby' => 'basketball'];
-    echo $list['name'] . '<br>';
+// Бесконечный Цикл
+//    $isHasHouse = true;
+//    while($isHasHouse) {
+//        echo $isHasHouse . '<br>';
+//    }
 
-// Многомерные массивы
-    $matrix = [
-            [4, 6, 3, 8],
-            [true, false],
-            ['Hello']
-    ];
-    $matrix[1][0] = 'pok';
-    echo $matrix[1][0];
+// Цикл Do While
+    $i = 100;
+    do {
+        $i--;
+        echo $i . '<br>';
+    } while($i < 10);
+
+// Операторы в Циклах
+    for($el = 100; $el > 10; $el /= 2) {
+        if($el < 15)
+            break;
+
+        if($el % 2 == 0)
+            continue;
+
+        echo $el . '<br>';
+    }
+
+// Перебор массива
+    $list = [5, 7, 3, 8, 'some', 45.7];
+    $count = count($list);
+
+    for($i = 0; $i < $count; $i++)
+        echo "Element $i: $list[$i]<br>";
+
+// Цикл foreach()
+    $list2 = ['age' => 24, 'name' => 'Alex', 'hobby', 'football'];
+    $arr = [5, 6, 8, 9];
+
+    foreach($list as $item => $value) {
+        echo "Key: $item. Value: $value.<br>";
+    }
+
+    foreach($arr as $i => $value){
+        echo "Index: $i. Value: $value.<br>";
+    }
 ?>
 </body>
 </html>
