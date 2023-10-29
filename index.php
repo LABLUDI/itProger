@@ -9,26 +9,24 @@
 </head>
 <body>
 <?php
+    $x = 222;
 
-    $a = 45;
-    $str = 'Hello!';
-    $isWeatherGood = false;
-
-    if($str !== 'Hello' && !$isWeatherGood) {
-	    echo 'Это так хозяин!';
-    } else if($a == 5) {
-        $res = "$a = 5";
-        echo $res;
-    } else if($a > 50) {
-        $res = "$a > 50";
-        echo $res;
-    } else if($a <= 45) {
-        $res = "$a <= 45";
-        echo $res;
-    } else {
-	    echo 'Ответ не верный хозяин!';
+    switch($x){
+        case 5:
+            echo 'Var: 5';
+            break;
+        case 8:
+            echo 'Var: 8';
+            break;
+        case 10:
+            echo 'Var: 10';
+            break;
+        case 6:
+            echo 'Var: 6';
+            break;
+        default:
+            echo 'Default work!';
     }
-
 ?>
 </body>
 </html>
