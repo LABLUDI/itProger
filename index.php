@@ -9,24 +9,26 @@
 </head>
 <body>
 <?php
-    $x = 222;
+// Одномерные массивы
+    $nums = array(4, 5, 6, -23, 6);
+    $nums[0] = 45;
+    echo $nums[0] . '<br>';
 
-    switch($x){
-        case 5:
-            echo 'Var: 5';
-            break;
-        case 8:
-            echo 'Var: 8';
-            break;
-        case 10:
-            echo 'Var: 10';
-            break;
-        case 6:
-            echo 'Var: 6';
-            break;
-        default:
-            echo 'Default work!';
-    }
+    $arr = [4, 5, 0.4, 'ghbdtn', true, 21];
+    echo $arr[4] . '<br>';
+
+// Ассоциативные массивы
+    $list = ['age' => 24, 'name' => 'Alex', 'hobby' => 'basketball'];
+    echo $list['name'] . '<br>';
+
+// Многомерные массивы
+    $matrix = [
+            [4, 6, 3, 8],
+            [true, false],
+            ['Hello']
+    ];
+    $matrix[1][0] = 'pok';
+    echo $matrix[1][0];
 ?>
 </body>
 </html>
