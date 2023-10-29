@@ -9,15 +9,26 @@
 </head>
 <body>
 <?php
-    $str = 'Hello';
-    echo "VAR: $str" . '!' . '<br>';
-    echo "<input type='text'>" . '<br>';
 
-    $length = strlen($str);
-    echo strtoupper(trim('  sdf  ')) . '<br>';
-    echo $length . '<br>';
+    $a = 45;
+    $str = 'Hello!';
+    $isWeatherGood = false;
 
-    echo md5('27011999') . '<br>';
+    if($str !== 'Hello' && !$isWeatherGood) {
+	    echo 'Это так хозяин!';
+    } else if($a == 5) {
+        $res = "$a = 5";
+        echo $res;
+    } else if($a > 50) {
+        $res = "$a > 50";
+        echo $res;
+    } else if($a <= 45) {
+        $res = "$a <= 45";
+        echo $res;
+    } else {
+	    echo 'Ответ не верный хозяин!';
+    }
+
 ?>
 </body>
 </html>
