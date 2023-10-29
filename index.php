@@ -9,59 +9,56 @@
 </head>
 <body>
 <?php
-// Цикл For
-    for($i = 100; $i > 20; $i -= 5)
-        echo $i . '<br>';
+    function info($word) {
+        echo "$word<br>";
+    }
+    info(1);
+    info('Hello');
 
-// Цикл While
-    $i = 1;
-    while($i <= 10) {
-        echo $i . '<br>';
-        $i++;
+    function math($x, $y) {
+        return $x + $y;
     }
 
-// Бесконечный Цикл
-//    $isHasHouse = true;
-//    while($isHasHouse) {
-//        echo $isHasHouse . '<br>';
-//    }
+    $res = math(4,6);
+    $res2 = math(90, 90000);
 
-// Цикл Do While
-    $i = 100;
-    do {
-        $i--;
-        echo $i . '<br>';
-    } while($i < 10);
+    info($res);
+    info($res2);
 
-// Операторы в Циклах
-    for($el = 100; $el > 10; $el /= 2) {
-        if($el < 15)
-            break;
-
-        if($el % 2 == 0)
-            continue;
-
-        echo $el . '<br>';
+    function summary($arr){
+        $summa = 0;
+        foreach($arr as $value){
+            $summa += $value;
+        }
+        return $summa;
     }
 
-// Перебор массива
-    $list = [5, 7, 3, 8, 'some', 45.7];
-    $count = count($list);
+    $list = [5, 7, 3];
+    echo summary($list).'<br>';
+    echo summary([5, 2, 3]) . '<br>';
 
-    for($i = 0; $i < $count; $i++)
-        echo "Element $i: $list[$i]<br>";
+    // Область видимости
 
-// Цикл foreach()
-    $list2 = ['age' => 24, 'name' => 'Alex', 'hobby', 'football'];
-    $arr = [5, 6, 8, 9];
-
-    foreach($list as $item => $value) {
-        echo "Key: $item. Value: $value.<br>";
+    function info2() {
+        global $n;
+        $n = 0;
     }
 
-    foreach($arr as $i => $value){
-        echo "Index: $i. Value: $value.<br>";
+
+    function  click() {
+        static $count;
+        $count++;
+        echo $count . '<br>';
     }
+
+    $n = 6780;
+    info2();
+    echo $n;
+    click();
+    click();
+    click();
+    click();
+    click();
 ?>
 </body>
 </html>
