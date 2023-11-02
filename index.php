@@ -4,60 +4,34 @@ require_once 'blocks/header.php';
 ?>
     <h1>Главная страница</h1>
 <?php
-$lis = [
-	5,
-	7,
-	3,
-	6,
-	7,
-	8,
-];
-unset($lis[1]);
-$lis = array_values($lis);
-//    sort($lis);
-//    rsort($lis);
-//    shuffle($lis);
+//    $file = fopen('text.txt', 'a');
+//
+//    fwrite($file, "\nExample text \nHello");
+//
+//    fclose($file);
 
-//    if(in_array(30, $lis) == '')
-//        echo 'Not found';
-//    else
-//        echo 'Found';
+    $filename = 'text.txt';
 
-$arr = array_slice($lis, 2, 2);
-var_dump($arr);
-echo '<br>';
+    $file = fopen('text.txt', 'r');
 
-$arr_1 = [
-	5,
-	7,
-];
-$arr_2 = [
-	6,
-	8,
-	9,
-];
-$arr_3 = array_merge($arr_1, $arr_2);
+    $content = fread($file, filesize($filename));
 
-print_r($arr_3);
-echo '<br>';
+    fclose($file);
 
-print_r($lis);
-echo '<br>';
+    echo '<pre>' . $content . '</pre>' . '<br>';
 
-$x = (float)'10';
-echo gettype($x) . '<br>';
-echo is_numeric($x) . '<br>';
+    file_put_contents('a.txt', "Example\nHello");
 
-$str = 'Example';
-echo strpos($str, 'am') . '<br>';
+    echo file_get_contents('a.txt') . '<br>';
 
-$words = 'jhon, bob, alex';
-$arr_words = explode(',', $words);
-print_r($arr_words);
-echo '<br>';
-echo '<br>' . implode(' ', $arr_words);
+    echo file_exists('a.txt') . '<br>';
 
+//    rename('a.txt', 'new_name.txt');
 
+//    unlink('new_name.txt');
+
+    echo fileperms(__FILE__);
+    chmod(__FILE__, 777);
 
 require_once 'blocks/footer.php';
 ?>
