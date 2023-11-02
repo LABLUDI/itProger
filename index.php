@@ -1,18 +1,29 @@
 <?php
+session_start();
+
 $title = 'Главная страница';
 require_once 'blocks/header.php';
 ?>
-	<h1>Главная страница</h1>
+    <h1>Главная страница</h1>
 <?php
-    $message = 'Сообщение';
-    $to = 'admin@itproger.com';
-    $from = 'example@itproger.com';
-    $subject = 'Тема сообщения';
+$user_name = 'Alex';
+//    setcookie('user_name', $user_name, time() + 180);
+//    print_r($_COOKIE);
 
-    $subject = '=?utf-8?b?' . base64_encode($subject) . '?=';
-    $headers = "From: $from\r\nReply-to: $from\r\nContent-type:text/plane; charset=utf-8\r\n";
+//    setcookie('user_name', $user_name, time() - 180);
 
-    mail($to, $subject, $message, $headers);
+//    if($_COOKIE['login'] == '')
+
+//echo $_COOKIE['user_name'];
+
+//    $_SESSION['user_name'] = $user_name;
+
+//    unset($_SESSION['user_name']);
+    //session_destroy();
+
+    if($_SESSION['user_name'] == 'Alex'){
+        echo 'Да, сессия установлена';
+    }
 
 require_once 'blocks/footer.php';
 ?>
