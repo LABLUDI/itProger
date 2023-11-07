@@ -7,16 +7,18 @@ require_once 'blocks/header.php';
     <form action="check_contact.php" method="post">
         <input type="text" name="username" value="<?= $_SESSION['username'] ?>" placeholder="Введите имя"
                class="form-control">
-        <div class="text-danger"><?=?></div>
+        <div class="text-danger"><?=$_SESSION['error_username']?></div><br>
         <input type="email" name="email" value="<?= $_SESSION['email'] ?>" placeholder="Введите email"
                class="form-control"><br>
+        <div class="text-danger"><?=$_SESSION['error_email']?></div><br>
         <input type="text" name="subject" value="<?= $_SESSION['subject'] ?>" placeholder="Тема сообщения"
                class="form-control"><br>
+        <div class="text-danger"><?=$_SESSION['error_subject']?></div><br>
         <textarea name="message" value="<?= $_SESSION['message'] ?>" placeholder="Введите ваше сообщение"
                   class="form-control"></textarea><br>
+        <div class="text-danger"><?=$_SESSION['error_message']?></div><br>
         <button type="submit" class="btn btn-success">Отправить</button>
     </form>
 <?php
-
 require_once 'blocks/footer.php';
 ?>

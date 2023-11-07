@@ -13,10 +13,15 @@
 
 	if(strlen($user_name) <= 1) {
 		$_SESSION['error_username'] = 'Введите коректное имя пользователя';
-	} else if(strlen($from) < 5 || strpos($from,'@') == false) {
+	}   else if(strlen($from) < 5 || strpos($from,'@') == false) {
 		$_SESSION['error_email'] = 'Вы ввели некоректный email';
-	} else if(strlen($subject) <= 5) {
+	}   else if(strlen($subject) <= 5) {
 		$_SESSION['error_subject'] = 'Вы ввели некоректный email';
-	} else if(strlen($message) <= 15) {
+	}   else if(strlen($message) <= 15) {
 		$_SESSION['error_message'] = 'Вы ввели некоректный email';
-	}
+	}   else {
+        $_SESSION['error_username'] = "";
+        $_SESSION['error_email'] = "";
+        $_SESSION['error_subject'] = "";
+        $_SESSION['error_message'] = "";
+    }
