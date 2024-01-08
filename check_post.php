@@ -14,6 +14,6 @@ if(trim($name) == '') {
 	//		echo '<h1>Все данные</h1>';
 	//		foreach($_POST as $key => $value){
 	//			echo "<p>$value</p>";
-	header('Location: about.php');
+//	header('Location: about.php');
 	exit;
 }

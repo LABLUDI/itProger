@@ -4,6 +4,9 @@ $title = 'Контакты';
 require_once 'blocks/header.php';
 ?>
 <?= "<h1 class='mt-5'>$title</h1>" ?>
+    <div class="alert alert-success">
+        <?=$_SESSION['success_mail']?>
+    </div>
     <form action="check_contact.php" method="post">
         <input type="text" name="username" value="<?= $_SESSION['username'] ?>" placeholder="Введите имя"
                class="form-control">
@@ -14,8 +17,8 @@ require_once 'blocks/header.php';
         <input type="text" name="subject" value="<?= $_SESSION['subject'] ?>" placeholder="Тема сообщения"
                class="form-control"><br>
         <div class="text-danger"><?=$_SESSION['error_subject']?></div><br>
-        <textarea name="message" value="<?= $_SESSION['message'] ?>" placeholder="Введите ваше сообщение"
-                  class="form-control"></textarea><br>
+        <textarea name="message" placeholder="Введите ваше сообщение"
+                  class="form-control"><?= $_SESSION['message'] ?></textarea><br>
         <div class="text-danger"><?=$_SESSION['error_message']?></div><br>
         <button type="submit" class="btn btn-success">Отправить</button>
     </form>
